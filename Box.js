@@ -3,7 +3,7 @@ class Box{
     constructor(x,y,width,height){
         var options={
             isStatic:false,
-            restitutuion:0.5,
+            restitutuion:0.01,
             density:0.1,
             friction:1
     

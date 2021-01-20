@@ -4,7 +4,8 @@ class Rope{
             bodyA:bodyA,
             pointB:pointB,
             stiffness:1.2,
-            length:200
+            length:570,
+             
 
         }
         this.pointB = pointB;
@@ -14,22 +15,27 @@ class Rope{
         
     }
    // fly(){
-    //    this.chain.bodyA = null;
-   // }
+   //     this.chain.bodyA = null;
+ // }
     display(){
 
-        if(this.chain.bodyA){
+        var pos =this.chain.bodyA.position;
+        var point = this.pointB;
+
+       // if(this.chain.bodyA){
             
-            var pos =this.chain.bodyA.position;
-            var point = this.pointB;
             
             push();
             stroke("black");
             strokeWeight(5);
-            line(pos.x,pos.y,point.x,point.y);
+          //   line(pos.x,pos.y,point.x,point.y);
             pop();
+
+            }
+
+        
+            
         }
 
     
-    }
-}
+    

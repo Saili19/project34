@@ -5,24 +5,28 @@ const World = Matter.World;
 
 var hero,ground;
 var backgroundImg;
-var chain;
+var chain1;
+var chain2;
+var monster;
+var box1,box2,box3,box4,box5,box6,box7,box8,box9,box10,box11,box12,box13,box14,box15,box16,box17,box18,box19,box20;
 
 function preload() {
  backgroundImg = loadImage("GamingBackground.png")
 }
 
 function setup() {
-  createCanvas(3000, 800);
+  createCanvas(3000,800);
 
   engine= Engine.create();
   world = engine.world;
 
-  ground = new Ground(700,700,3000,10);
+  ground = new Ground(10,790,2900,10);
 
-  hero = new Hero(100,100,50);
+  hero = new Hero(470,100,50);
+  monster = new Monster(1400,600,450,450);
 
-  chain = new Rope(hero.body,{x:200,y:0});
- 
+  chain1 = new Rope(hero.body,{x:470,y:0});
+  //chain2 = new Rope(monster.body,{x:1400,y:0});
 
   box1= new Box(1000,100,70,70);
   box2= new Box(1000,100,70,70);
@@ -46,6 +50,18 @@ function setup() {
   box18= new Box(820,100,70,70);
   box19= new Box(820,100,70,70);
   box20= new Box(820,100,70,70);
+
+  box21 = new Box(910,100,70,70);
+  box22= new Box(1100,100,70,70);
+  box23= new Box(1100,100,70,70);
+  box24= new Box(1100,100,70,70);
+  box25= new Box(1100,100,70,70);
+  box26= new Box(1100,100,70,70);
+  box27= new Box(1100,100,70,70);
+  box28= new Box(1100,100,70,70);
+
+
+  
 }
 
 function draw() {
@@ -54,7 +70,9 @@ function draw() {
 
   ground.display();
  
-  chain.display();
+  chain1.display();
+  //chain2.display();
+  hero.display(); 
   box1.display();
   box2.display();
   box3.display();
@@ -79,10 +97,21 @@ function draw() {
   box18.display();
   box19.display();
   box20.display();
+  box21.display();
+  box22.display();
+  box23.display();
+  box24.display();
+  box25.display();
+  box26.display();
+  box27.display();
+  box28.display();
+
+  monster.display();
+ // chain2.display();
   
-  hero.display(); 
+  
 }
 function mouseDragged(){
   Matter.Body.setPosition(hero.body,{x:mouseX,y:mouseY});
 }
-
+ 

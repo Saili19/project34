@@ -2,8 +2,8 @@ class Ground{
 
     constructor(x,y,width,height){
         var options={
-            isStatic:true
-            
+            isStatic:true,
+            density:2,
         }
         this.x =x;
         this.y= y;

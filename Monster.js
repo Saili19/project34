@@ -1,10 +1,10 @@
-class Box{
+class Monster{
 
     constructor(x,y,width,height){
         var options={
             isStatic:false,
             restitutuion:0.5,
-            density:0.1,
+            density:0.009,
             friction:1
     
         }
@@ -12,6 +12,7 @@ class Box{
         this.y= y;
         this.width= width;
         this.height= height;
+        this.image = loadImage("Monster-01.png")
         this.body = Bodies.rectangle(x,y,width,height,options);
         World.add(world,this.body);
     }
@@ -21,11 +22,8 @@ class Box{
         push();
         translate(pos.x,pos.y);
         
-        stroke("black");
-        strokeWeight(3);
-        rectMode(CENTER);
-        fill("red");
-        rect(0,0,this.width,this.height);
+         imageMode(CENTER);
+        image(this.image,0,0,this.width,this.height);
         pop();
     }
 }
